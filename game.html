@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory</title>
+  <script src="./script/game.js" defer></script>
+  <script src="./script/script.js" defer></script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/unterseite.css">
+  <link rel="stylesheet" href="css/game.css">
+</head>
+
+<body>
+  <nav>
+    <div class="topnav" id="myTopnav">
+      <div id="logoNav">
+        <div id="toggleSwitch">
+          <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider round"></div>
+          </label>
+        </div>
+        <div id="logoHeader">
+          <a href="./index.html" class="logo">FROZEN</a>
+        </div>
+
+      </div>
+      <div id="linksNav">
+        <a href="./movies.html">Movies</a>
+        <a href="./characters.html">Characters</a>
+        <a href="./music.html">Music</a>
+        <a href="./quiz.html">Quiz</a>
+        <a href="./game.html">Game</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          ☰
+        </a>
+      </div>
+    </div>
+  </nav>
+  <section class="memory-game">
+<div id="memo">
+    <div class="memory-card" data-framework="hans">
+      <img class="front-face" src="./img/characters/hans.png" alt="hans">
+      <img class="back-face" src="./img/snowflake.webp" alt="Memory Card">
+    </div>
+
+    <div class="memory-card" data-framework="hans">
+      <img class="front-face" src="./img/characters/hans.png" alt="hans">
+      <img class="back-face" src="./img/snowflake.webp" alt="Memory Card">
+    </div>
+
+    <div class="memory-card" data-framework="elsa">
+      <img class="front-face" src="./img/characters/elsa.png" alt="elsa">
+      <img class="back-face" src="./img/snowflake.webp" alt="Memory Card">
+    </div>
+
+    <div class="memory-card" data-framework="elsa">
+      <img class="front-face" src="./img/characters/elsa.png" alt="elsa">
+      <img class="back-face" src="./img/snowflake.webp" alt="Memory Card">
+    </div>
+
+    <div class="memory-card" data-framework="anna">
+      <img class="front-face" src="./img/characters/anna.png" alt="anna">
+      <img class="back-face" src="./img/snowflake.webp" alt="Memory Card">
+    </div>
+
+    <div class="memory-card" data-framework="anna">
+      <img class="front-face" src="./img/characters/anna.png" alt="anna">
+      <img class="back-face" src="./img/snowflake.webp" alt="Memory Card">
+    </div>
+
+    <div class="memory-card" data-framework="kristoff">
+      <img class="front-face" src="./img/characters/kristoff.png" alt="kristoff">
+      <img class="back-face" src="./img/snowflake.webp" alt="Memory Card">
+    </div>
+
+    <div class="memory-card" data-framework="kristoff">
+      <img class="front-face" src="./img/characters/kristoff.png" alt="kristoff">
+      <img class="back-face" src="./img/snowflake.webp" alt="Memory Card">
+    </div>
+
+    <div class="memory-card" data-framework="olaf">
+      <img class="front-face" src="./img/characters/olaf.png" alt="olaf">
+      <img class="back-face" src="./img/snowflake.webp" alt="Memory Card">
+    </div>
+
+    <div class="memory-card" data-framework="olaf">
+      <img class="front-face" src="./img/characters/olaf.png" alt="olaf">
+      <img class="back-face" src="./img/snowflake.webp" alt="Memory Card">
+    </div>
+
+    <div class="memory-card" data-framework="Duke">
+      <img class="front-face" src="./img/characters/Duke-of-Weselton.png" alt="Duke">
+      <img class="back-face" src="./img/snowflake.webp" alt="Memory Card">
+    </div>
+
+    <div class="memory-card" data-framework="Duke">
+      <img class="front-face" src="./img/characters/Duke-of-Weselton.png" alt="Duke">
+      <img class="back-face" src="./img/snowflake.webp" alt="Memory Card">
+    </div>
+  </div>
+  </section>
+  <div id="b">
+    <button onclick="window.location.reload()">
+        Retry
+    </button>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,305 @@
+/**font**/
+@font-face {
+    font-family: Frozen;
+    src: url(../font/frozen.ttf);
+}
+
+@font-face {
+    font-family: Disney;
+    src: url(../font/disney.ttf);
+}
+:root[data-theme="elsa"] {
+    --background: rgb(53, 98, 126);
+    --gradient: linear-gradient(0deg, rgba(53, 98, 126, 1) 0%, rgba(141, 184, 219, 1) 59%);
+    --bgCard: linear-gradient(3deg, rgba(225, 247, 255, 1) 0%, rgba(2, 0, 125, 1) 99%);
+    --bgCardColor: rgb(225, 247, 255);
+    --bgCardGradient2: linear-gradient(0deg, #35627e 0%, #c2d8e5 100%);
+    --bgCardColor2: 35627e;
+    --white: #fff;
+    --lightBlue: #ACE5EE;
+    --normalBlue: #59ACD2;
+    --blue: #71A6D2;
+    --darkBlue: rgba(2, 0, 125, 1);
+    --topNavColor: #f2f2f2;
+    --bgImgHome: url('../img/home/bg.jpg');
+    --black: #0000;
+    --white: #fff;
+    --bgStart: rgb(113, 166, 210);
+    --gradientStart: linear-gradient(3deg, rgba(113, 166, 210, 1) 45%, rgba(255, 255, 255, 1) 100%);
+    --buttonQuiz: rgb(0, 102, 204);
+    --colorSlider: #2968bb;
+    /**pictures***/
+    --bgImgHome: url('../img/home/bg.jpg');
+    --imgStart1: url("../img/home/cloud2.webp");
+    --imgStart2: url("../img/home/castle.png");
+    --imgStart3: url("../img/home/cloud3.webp");
+    --imgStart4: url("../img/home/cloud1.png");
+    --imgStartPerson: url('../img/home/elsa.png');
+    --personPosition: right bottom;
+    --castlePosition: left bottom;
+    --colorButtonDown: #000;
+    --hoverNav: rgba(180, 146, 232, 0.8);
+    --imgSlider: url('../img/snowflake.webp');
+}
+
+:root[data-theme="anna"] {
+    --background: rgb(99, 0, 35);
+    --gradient: linear-gradient(0deg, #8f3985 0%, #ab66a7 59%);
+    --bgCard: linear-gradient(0deg, rgb(140, 0, 49) 0%, rgba(99, 0, 35, 1) 59%);
+    --bgCardColor: rgb(99, 0, 35);
+    --bgCardGradient2: linear-gradient(0deg, rgb(140, 0, 49) 0%, rgba(99, 0, 35, 1) 59%);
+    --bgCardColor2: rgb(232,11,89);
+    --white: #fff;
+    --lightBlue: rgb(247,229,255);
+    --normalBlue: rgb(248,204,227);
+    --blue: rgb(136,21,52);
+    --darkBlue: /**#8f3985**/rgb(87,25,50);
+    --topNavColor: #f2f2f2;
+    --bgImgHome: url('../img/home/bg.jpg');
+    --black: #0000;
+    --white: #fff;
+    --bgStart: rgb(99, 0, 35);
+    --gradientStart: linear-gradient(0deg, rgb(140, 0, 49) 0%, rgba(99, 0, 35, 1) 59%);
+    --buttonQuiz: rgb(111,96,137);
+    --colorSlider: rgb(111,96,137);
+    /**pictures***/
+    --bgImgHome: url('../img/home/bg2.jpg');
+    --imgStart1: url("../img/home/leaves.png");
+    --imgStart2: url("../img/home/sven.png");
+    --imgStart3: url("../img/home/leaves2.png");
+    --imgStart4: url("../img/home/leaves1.png");
+    --imgStartPerson: url('../img/home/anna.png');
+    --personPosition: left bottom;
+    --castlePosition: right bottom;
+    --colorButtonDown: #fff;
+    --hoverNav: rgba(240, 89, 89, 0.8);
+    --strokeWidth: 0.1rem;
+    --strokeColor: rgb(99, 0, 35);
+    --imgSlider: url('../img/leaf.png');
+}
+body {
+    background: var(--background);
+    background: var(--gradient);
+}
+
+.slide-container {
+    text-align: center;
+    overflow-y: hidden;
+    overflow: hidden;
+}
+
+.description,
+.card_info {
+    padding-left: 3%;
+    padding-right: 3%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.card_info {
+    margin: 0;
+}
+
+.card_description {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 90vw;
+}
+
+
+.card_image {
+    background-color: var(--bgCardColor2);
+    background: var(--bgCardGradient2);
+    transition: all linear 1s;
+    position: relative;
+    height: 30vh;
+    margin-bottom: 1%;
+    border-top-left-radius: 4%;
+    border-top-right-radius: 4%;
+}
+
+.wrapper {
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+}
+
+.card {
+    background: white;
+    height: 75vh;
+    display: inline-block;
+    margin: auto;
+    border-radius: 4%;
+    position: relative;
+    text-align: center;
+    box-shadow: -1px 15px 30px -12px black;
+    z-index: 9999;
+    transition: all 0.2s ease;
+}
+
+.card:hover {
+    box-shadow: 0px 0px 30px 1px var(--lightBlue);
+
+}
+
+.textBox {
+    height: 35vh;
+}
+
+.textBox div {
+    width: 100%;
+}
+
+.card_frozen {
+    font-family: 'Disney', Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    color: gray;
+}
+
+.description {
+    text-align: justify;
+}
+
+.card_header {
+    font-size: 3vw;
+    color: var(--background);
+    font-weight: 2500;
+    font-family: 'Frozen', Arial, Helvetica, sans-serif;
+}
+
+/**laptop***/
+@media (min-width:1200px) {
+    .slide-container {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .card {
+        min-width: 23vw;
+        max-width: 25vw;
+    }
+
+    .card_image {
+        min-width: 23vw;
+        max-width: 25vw;
+        margin-left: auto;
+        margin-right: auto;
+        max-height: 30vh;
+    }
+
+    .card_image img {
+        max-width: 23vw;
+        height: 30vh;
+    }
+
+    .card_frozen {
+        font-size: 1vw;
+    }
+
+    .description,
+    .card_info {
+        font-size: 1.5vw;
+        min-width: 23vw;
+        max-width: 25vw;
+    }
+
+    .card_header {
+        font-size: 3.5vw;
+    }
+
+}
+
+/***tablet**/
+@media (min-width:650px)and (max-width:1200px) {
+    .slide-container {
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        min-width: 50vw;
+        max-width: 55vw;
+    }
+
+    .card_image {
+        max-width: none;
+    }
+
+    .card_image img {
+        max-width: 55vw;
+        height: 30vh;
+    }
+
+    .description,
+    .card_info {
+        font-size: 2.5vw;
+        min-width: 50vw;
+        max-width: 55vw;
+    }
+
+    .card_header {
+        font-size: 5vw;
+    }
+
+    .card_frozen {
+        font-size: 2.5vw;
+    }
+}
+
+/**handy**/
+@media (min-width:0px)and (max-width:650px) {
+    .slide-container {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        min-width: 72vw;
+        max-width: 75vw;
+    }
+
+    .card_image img {
+        max-width: 72vw;
+        height: 30vh;
+    }
+
+    .description,
+    .card_info {
+        font-size: 5vw;
+        min-width: 72vw;
+        max-width: 75vw;
+    }
+
+    .card_header {
+        font-size: 10vw;
+    }
+}
+
+/*********observer*********/
+/* CSS Class für observer: hidden Properties */
+.onscroll_hidden {
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 3s, transform 1s ease-out;
+}
+
+.onscroll_hidden2 {
+    transform: translateX(50%);
+    opacity: 0;
+    transition: opacity 3s, transform 1s ease-out;
+}
+/* CSS Class für Observer: visible Properties */
+.onscroll_visible {
+    transform: translateX(0);
+    opacity: 1;
+}

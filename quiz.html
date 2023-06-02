@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./script/script.js" defer></script>
+    <script src="./script/quiz.js" defer></script>
+    <script src="./script/quiz2.js" defer></script>
+
+    <link rel="stylesheet" href="./css/quiz.css">
+    <link rel="stylesheet" href="./css/quiz2.css">
+    <link rel="stylesheet" href="./css/unterseite.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Quiz</title>
+</head>
+
+<body>
+    <div id="overlay">
+        <!--quiz - content generierung js-->
+        <nav>
+            <div class="topnav" id="myTopnav">
+                <div id="logoNav">
+                    <div id="toggleSwitch">
+                        <label class="theme-switch" for="checkbox">
+                            <input type="checkbox" id="checkbox" />
+                            <div class="slider round"></div>
+                        </label>
+                    </div>
+                    <div id="logoHeader">
+                        <a href="./index.html" class="logo">FROZEN</a>
+                    </div>
+
+                </div>
+                <div id="linksNav">
+                    <a href="./movies.html">Movies</a>
+                    <a href="./characters.html">Characters</a>
+                    <a href="./music.html">Music</a>
+                    <a href="./quiz.html">Quiz</a>
+                    <a href="./game.html">Game</a>
+                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                        ☰
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <div id="erg">
+            <div id="questionBox"></div>
+        </div>
+    </div>
+    <nav>
+        <div class="topnav" id="myTopnav">
+            <div id="logoNav">
+                <div id="toggleSwitch">
+                    <label class="theme-switch" for="checkbox">
+                        <input type="checkbox" id="checkbox" />
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+                <div id="logoHeader">
+                    <a href="./index.html" class="logo">FROZEN</a>
+                </div>
+
+            </div>
+            <div id="linksNav">
+                <a href="./movies.html">Movies</a>
+                <a href="./characters.html">Characters</a>
+                <a href="./music.html">Music</a>
+                <a href="./quiz.html">Quiz</a>
+                <a href="./game.html">Game</a>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    ☰
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div id="chooseQuiz">
+            <div onclick="movieQuiz('questionsTF')" id="qu1"></div>
+            <div onclick="movieQuiz('musicQu')" id="qu2"></div>
+            <div onclick="startQuiz()" id="qu3"></div>
+            <div onclick="movieQuiz('whoIsMissing')" id="qu4"></div>
+            <!--
+                    <img onclick="movieQuiz('questionsTF')" src="./img/Quiz/movie_quiz.jpg" alt="">
+                    <img onclick="movieQuiz('musicQu')" src="./img/Quiz/song_quiz.jpg" alt="">
+                    <img onclick="printQuestion()" src="./img/Quiz/who_am_i.jpg" alt="">-->
+        </div>
+
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./script/script.js" defer></script>
+    <script src="./script/music.js" defer></script>
+    <link rel="stylesheet" href="./css/unterseite.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/music.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    
+    <title>Music</title>
+</head>
+
+<body>
+    <!--Overlay-->
+    <div id="overlay">
+        <i class="fa fa-angle-down fa-3x" aria-hidden="true" onclick="off()"></i>
+
+        <div id="text">Overlay Text</div>
+    </div>
+
+    <nav>
+        <div class="topnav" id="myTopnav">
+            <div id="logoNav">
+                <div id="toggleSwitch">
+                    <label class="theme-switch" for="checkbox">
+                        <input type="checkbox" id="checkbox" />
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+                <div id="logoHeader">
+                    <a href="./index.html" class="logo">FROZEN</a>
+                </div>
+
+            </div>
+            <div id="linksNav">
+                <a href="./movies.html">Movies</a>
+                <a href="./characters.html">Characters</a>
+                <a href="./music.html">Music</a>
+                <a href="./quiz.html">Quiz</a>
+                <a href="./game.html">Game</a>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    ☰
+                </a>
+            </div>
+        </div>
+    </nav>
+    <main id="choosePlaylist">
+        <img onclick="changePlaylist(1)" src="./img/frozen1_playlist.jpg" alt="">
+        <img onclick="changePlaylist(2)" src="./img/frozen2_playlist.jpg" alt="">
+    </main>
+
+    <div id="ergbox"></div>
+    
+    </div>
+
+</body>
+
+</html>

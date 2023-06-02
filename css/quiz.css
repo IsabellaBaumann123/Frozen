@@ -1,0 +1,521 @@
+:root[data-theme="elsa"] {
+    --background: rgb(53, 98, 126);
+    --gradient: linear-gradient(0deg, rgba(53, 98, 126, 1) 0%, rgba(141, 184, 219, 1) 59%);
+    --bgCard: linear-gradient(3deg, rgba(225, 247, 255, 1) 0%, rgba(2, 0, 125, 1) 99%);
+    --bgCardColor: rgb(225, 247, 255);
+    --bgCardGradient2: linear-gradient(0deg, #35627e 0%, #c2d8e5 100%);
+    --bgCardColor2: 35627e;
+    --white: #fff;
+    --lightBlue: #ACE5EE;
+    --normalBlue: #59ACD2;
+    --blue: #71A6D2;
+    --darkBlue: rgba(2, 0, 125, 1);
+    --topNavColor: #f2f2f2;
+    --bgImgHome: url('../img/home/bg.jpg');
+    --black: #0000;
+    --white: #fff;
+    --bgStart: rgb(113, 166, 210);
+    --gradientStart: linear-gradient(3deg, rgba(113, 166, 210, 1) 45%, rgba(255, 255, 255, 1) 100%);
+    --buttonQuiz: rgb(0, 102, 204);
+    --colorSlider: #2968bb;
+    /**pictures***/
+    --bgImgHome: url('../img/home/bg.jpg');
+    --imgStart1: url("../img/home/cloud2.webp");
+    --imgStart2: url("../img/home/castle.png");
+    --imgStart3: url("../img/home/cloud3.webp");
+    --imgStart4: url("../img/home/cloud1.png");
+    --imgStartPerson: url('../img/home/elsa.png');
+    --personPosition: right bottom;
+    --castlePosition: left bottom;
+    --colorButtonDown: #000;
+    --hoverNav: rgba(180, 146, 232, 0.8);
+    --imgSlider: url('../img/snowflake.webp');
+    /****pictures quiz*****/
+    --imgMovieQu: url('../img/Quiz/movie_quiz.jpg');
+    --imgSongQu: url('../img/Quiz/song_quiz.jpg');
+    --imgWhoAmIQuiz: url('../img/Quiz/who_am_i.jpg');
+    --imgPersonQuiz: url('../img/Quiz/who_is_missing.jpg');
+}
+
+:root[data-theme="anna"] {
+    --background: rgb(99, 0, 35);
+    --gradient: linear-gradient(0deg, #8f3985 0%, #ab66a7 59%);
+    --bgCard: linear-gradient(0deg, rgb(140, 0, 49) 0%, rgba(99, 0, 35, 1) 59%);
+    --bgCardColor: rgb(99, 0, 35);
+    --bgCardGradient2: linear-gradient(0deg, rgb(140, 0, 49) 0%, rgba(99, 0, 35, 1) 59%);
+    --bgCardColor2: rgb(232, 11, 89);
+    --white: #fff;
+    --lightBlue: rgb(247, 229, 255);
+    --normalBlue: rgb(248, 204, 227);
+    --blue: rgb(136, 21, 52);
+    --darkBlue:
+        /**#8f3985**/
+        rgb(87, 25, 50);
+    --topNavColor: #f2f2f2;
+    --bgImgHome: url('../img/home/bg.jpg');
+    --black: #0000;
+    --white: #fff;
+    --bgStart: rgb(99, 0, 35);
+    --gradientStart: linear-gradient(0deg, rgb(140, 0, 49) 0%, rgba(99, 0, 35, 1) 59%);
+    --buttonQuiz: rgb(111, 96, 137);
+    --colorSlider: rgb(111, 96, 137);
+    /**pictures***/
+    --bgImgHome: url('../img/home/bg2.jpg');
+    --imgStart1: url("../img/home/leaves.png");
+    --imgStart2: url("../img/home/sven.png");
+    --imgStart3: url("../img/home/leaves2.png");
+    --imgStart4: url("../img/home/leaves1.png");
+    --imgStartPerson: url('../img/home/anna.png');
+    --personPosition: left bottom;
+    --castlePosition: right bottom;
+    --colorButtonDown: #fff;
+    --hoverNav: rgba(240, 89, 89, 0.8);
+    --strokeWidth: 0.1rem;
+    --strokeColor: rgb(99, 0, 35);
+    --imgSlider: url('../img/leaf.png');
+    /****pictures quiz*****/
+    --imgMovieQu: url('../img/Quiz/movie_quiz_2.jpg');
+    --imgSongQu: url('../img/Quiz/song_quiz_2.jpg');
+    --imgWhoAmIQuiz: url('../img/Quiz/who_am_i_2.jpg');
+    --imgPersonQuiz: url('../img/Quiz/who_is_missing_2.jpg');
+}
+
+/**font**/
+@font-face {
+    font-family: Frozen;
+    src: url(../font/frozen.ttf);
+}
+
+/********overlay quiz*************/
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--white);
+    color: var(--black);
+    z-index: 2;
+    background: var(--background);
+    background: var(--gradient);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: var(--white);
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+#erg {
+    height: 94vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+}
+
+#questionBox {
+    width: 80vw;
+    height: 60vh;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--blue);
+    color: var(--white);
+    border-radius: 3vw;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 0.2vw solid var(--darkBlue);
+}
+
+#questionBox h2 {
+    font-family: 'Frozen', Arial, Helvetica, sans-serif;
+    margin-left: 5%;
+    margin-bottom: 2%;
+}
+
+#questionBox #question,
+#questionBox audio {
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: left;
+    margin: 5%;
+    margin-bottom: 0;
+    position: relative;
+    margin-top: 0;
+}
+
+#desc {
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: left;
+    margin: 5%;
+    margin-bottom: 0;
+    position: relative;
+    margin-top: 0;
+    font-size: 1.5vw;
+}
+
+/******************************* choose quiz *************************************************/
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+/******* images choose quiz ********/
+#chooseQuiz div {
+    border-radius: 2vw;
+    background-size: cover;
+}
+
+#qu1 {
+    background-image: var(--imgMovieQu);
+
+}
+
+#qu2 {
+    background-image: var(--imgSongQu);
+}
+
+#qu3 {
+    background-image: var(--imgWhoAmIQuiz);
+}
+
+#qu4 {
+    background-image: var(--imgPersonQuiz);
+}
+
+/**laptop***/
+@media (min-width:1200px) {
+    main {
+        height: 94vh;
+    }
+
+    #chooseQuiz {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        align-items: center;
+        align-content: center;
+    }
+
+    #chooseQuiz div {
+        width: 20vw;
+        height: 20vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin: 10%;
+        opacity: 0.6;
+        transition: all 0.2s linear;
+    }
+
+    #chooseQuiz div:hover {
+        opacity: 1;
+        transform: scale(1.1);
+        box-shadow: 0px 0px 150px var(--darkBlue);
+    }
+}
+
+/***tablet**/
+@media (min-width:650px)and (max-width:1200px) {
+    #chooseQuiz {
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        align-content: center;
+    }
+
+    #chooseQuiz div {
+        width: 32vw;
+        height: 32vw;
+        margin: 5%;
+        margin-left: auto;
+        margin-right: auto;
+        opacity: 0.8;
+        transition: all 0.2s linear;
+    }
+
+    #chooseQuiz div:hover {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}
+
+/**handy**/
+@media (min-width:0px)and (max-width:650px) {
+    #chooseQuiz {
+        width: 99%;
+        margin-left: auto;
+        margin-right: auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        align-content: center;
+    }
+
+
+    #chooseQuiz div {
+        width: 70vw;
+        height: 70vw;
+        margin: 10%;
+        margin-left: auto;
+        margin-right: auto;
+        opacity: 0.8;
+        transition: all 0.2s linear;
+    }
+
+    #chooseQuiz div:hover {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}
+
+#chooseQuiz div:hover {
+    cursor: pointer;
+}
+
+/******************************* button *************************************************/
+/**button next**/
+.button_next {
+    position: relative;
+    bottom: 1%;
+    margin-right: 2%;
+    align-items: flex-end;
+    background-color: var(--buttonQuiz);
+    color: var(--white);
+    font-weight: bold;
+    padding: 0.35em;
+    padding-left: 1.2em;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 0.9em;
+    border: none;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    box-shadow: inset 0 0 1.6em -0.6em var(--darkBlue);
+    overflow-x: hidden;
+    position: relative;
+    height: 2.8em;
+    padding-right: 3.3em;
+}
+
+.button_next .icon {
+    background: var(--white);
+    margin-left: 1em;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.2em;
+    width: 2.2em;
+    border-radius: 0.7em;
+    box-shadow: 0.1em 0.1em 0.6em 0.2em var(--darkBlue);
+    right: 0.3em;
+    transition: all 0.3s;
+}
+
+.button_next:hover .icon {
+    width: calc(100% - 0.6em);
+}
+
+.button_next .icon svg {
+    width: 1.1em;
+    transition: transform 0.3s;
+    color: var(--darkBlue);
+}
+
+.button_next:hover .icon svg {
+    transform: translateX(0.1em);
+}
+
+.button_next:active .icon {
+    transform: scale(0.95);
+}
+
+#buttonAlign {
+    position: relative;
+    display: flex;
+    justify-content: left;
+    margin-top: 2%;
+    margin-left: 10%;
+    position: absolute;
+    bottom: 15%;
+    right: 15%;
+}
+
+#buttonAlignStart {
+    position: relative;
+    display: flex;
+    top: 20%;
+    justify-content: center;
+}
+
+
+
+/******************************* radio button *************************************************/
+.radio-button {
+    display: flex;
+    gap: 1vw;
+    justify-content: left;
+    margin: 5%;
+    margin-bottom: 0;
+    margin-top: 2%;
+    position: relative;
+    align-items: center;
+}
+
+.radio-button:hover {
+    cursor: pointer;
+}
+
+.radio-button input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+}
+
+
+
+
+.radio-button input[type="radio"]:checked+.radio {
+    border-color: var(--darkBlue);
+    transform: translateZ(0px);
+    background-color: #fff;
+}
+
+.radio-button input[type="radio"]:checked+.radio::before {
+    opacity: 1;
+}
+
+/**laptop***/
+@media (min-width:1200px) {
+    .radio {
+        position: relative;
+        display: inline-block;
+        width: 2vw;
+        height: 2vw;
+        border-radius: 50%;
+        border: 0.4vw solid var(--white);
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+        transform: translateZ(-25px);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .radio-button {
+        font-size: 1.5vw;
+    }
+
+    #questionBox h2 {
+        font-size: 3.5vw;
+    }
+
+    #questionBox #question {
+        font-size: 1.5vw;
+    }
+}
+
+/***tablet**/
+@media (min-width:650px)and (max-width:1200px) {
+    .radio {
+        position: relative;
+        display: inline-block;
+        width: 2.5vw;
+        height: 2.5vw;
+        border-radius: 50%;
+        border: 0.5vw solid var(--white);
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+        transform: translateZ(-25px);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .radio-button {
+        font-size: 2vw;
+    }
+
+    #questionBox h2 {
+        font-size: 5vw;
+    }
+
+    #questionBox #question {
+        font-size: 2vw;
+    }
+
+}
+
+/**handy**/
+@media (min-width:0px)and (max-width:650px) {
+    .radio {
+        position: relative;
+        display: inline-block;
+        width: 4.5vw;
+        height: 4.5vw;
+        border-radius: 50%;
+        border: 1vw solid var(--white);
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+        transform: translateZ(-25px);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .radio-button {
+        font-size: 4vw;
+    }
+
+    #questionBox h2 {
+        font-size: 6vw;
+    }
+
+    #questionBox #question {
+        font-size: 4vw;
+    }
+}
+
+#quizAlignWrap {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#quizAlignWrap img {
+    width: 100%;
+}
+
+#id1 {
+    width: 70%;
+    margin-left: 3%;
+}
+
+#id2 {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5%;
+}
+
+#id3 {
+    width: 15vw;
+    height: 15vw;
+}
+
+/*******************************  *************************************************/
+/**laptop***/
+@media (min-width:1200px) {}
+
+/***tablet**/
+@media (min-width:650px)and (max-width:1200px) {}
+
+/**handy**/
+@media (min-width:0px)and (max-width:650px) {}

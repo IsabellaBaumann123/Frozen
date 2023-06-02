@@ -289,6 +289,7 @@ main {
 /******************************* button *************************************************/
 /**button next**/
 .button_next {
+    overflow-y: hidden;
     position: relative;
     bottom: 1%;
     margin-right: 2%;

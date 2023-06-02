@@ -320,11 +320,13 @@ let currentSong = document.createElement('audio');
 let actPlaylist = playlist1;
 
 function loadTrack(track_index) {
-    console.log(actPlaylist[track_index].url)
+    //console.log(actPlaylist[track_index].url)
     // Daten aus Local Storage auslesen
 
     if ((localStorage['fav'])) {
         words_storage = JSON.parse(localStorage['fav']);
+
+
         console.log(words_storage);
 
         for(let i = 0; i < words_storage.length; i++){
@@ -473,6 +475,8 @@ function redHeart() {
         //hearts[i].classList.toggle('red');
         hearts[i].style.color = "red"
     }
+    // Update localStorage
+    localStorage['fav'] = JSON.stringify(likedSongs);
 }
 function greyHeart() {
     isLiked = false;
@@ -500,6 +504,9 @@ function greyHeart() {
         //hearts[i].classList.toggle('#1d3544');
         hearts[i].style.color = "grey"
     }
+    console.log(likedSongs[0])
+        localStorage['fav'] = JSON.stringify(likedSongs);
+
 }
 
 function likeClick(){

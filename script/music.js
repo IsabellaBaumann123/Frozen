@@ -332,10 +332,11 @@ function loadTrack(track_index) {
         for(let i = 0; i < words_storage.length; i++){
             if(words_storage[i] == actPlaylist[track_index].url){
                 console.log('juhu')
-                redHeart();
+                document.getElementsByClassName("fa-heart")[0].style.color = "red"
                 break;
             } else {
-                greyHeart();
+                document.getElementsByClassName("fa-heart")[0].style.color = "grey"
+
             }
         }
     }
@@ -404,7 +405,7 @@ function pauseTrack() {
 }
 
 function nextTrack() {
-    greyHeart()
+    //greyHeart()
     if (actSongIndex < actPlaylist.length - 1)
         actSongIndex += 1;
     else actSongIndex = 0;
@@ -481,23 +482,19 @@ function redHeart() {
 function greyHeart() {
     isLiked = false;
     for (let i = 0; i < likedSongs.length; i++) {
-        
+        console.log(likedSongs[i])
         if (likedSongs[i] === actPlaylist[actSongIndex].url) {
             console.log('for 1')
             //console.log("before" + likedSongs[i])
-            likedSongs[i] = '';
+
+            // SPLICE entfernt ein Item an Stelle i - so sind die Plätze wirklich weg und nicht "nur leer"
+            likedSongs.splice(i, 1);
+
+            console.log(likedSongs);
+            //likedSongs[i] = '';
             //console.log("after" + likedSongs[i])
         }
     }
-    /*for (let i = 0; i < words_storage.length; i++) {
-        
-        if (words_storage[i] === actPlaylist[actSongIndex].url) {
-            console.log('for 2')
-            //console.log("before" + words_storage[i])
-            words_storage[i] = '';
-            //console.log("after" + words_storage[i])
-        }
-    }*/
 
     
     for (let i = 0; i < heart.length; i++) {
@@ -505,145 +502,41 @@ function greyHeart() {
         hearts[i].style.color = "grey"
     }
     console.log(likedSongs[0])
-        localStorage['fav'] = JSON.stringify(likedSongs);
+    localStorage['fav'] = JSON.stringify(likedSongs);
 
 }
 
 function likeClick(){
-    if (isLiked) {
-        greyHeart()
-    } else {
-        redHeart()
-    }
-    let like = actPlaylist[actSongIndex].url;
 
-    // Local Storage überprüfen
-    if ((localStorage['fav'])) {
+    console.log("click")
+    console.log("Geliked: " + isLiked)
+
+     // Local Storage überprüfen - die aktuell gelikten Songs herausholen:
+     if ((localStorage['fav'])) {
         likedSongs = JSON.parse(localStorage['fav']);
     }
 
-    // Neuen Eintrag hinzufügen
-    likedSongs.push(like);
+    let like = actPlaylist[actSongIndex].url;
+    console.log(likedSongs.includes(like))
 
-    // Update localStorage
-    localStorage['fav'] = JSON.stringify(likedSongs);
+    // Prüfen ob das angeklickte Lied bei den gelikten Songs dabei ist
+    // Wenn dabei - soll es entfernt werden (Herz wieder auf Grau gestellt werden)
+    if (likedSongs.includes(like)) {
+        console.log("war geliket")
+        greyHeart();
+        
+        // Wenn nicht dabei soll es hinzugefügt und im localStorage gesichert werden
+    } else {
+        redHeart();
+
+        // Neuen Eintrag hinzufügen
+        likedSongs.push(like);
+
+        // Update localStorage
+        localStorage['fav'] = JSON.stringify(likedSongs);
+
+    }
+
 }
 
 
-//window.addEventListener("resize", resizeFunction);
-/**
-function resizeFunction() {
-    let html_code = '';
-    //handy
-    if (window.innerWidth > 0 && window.innerWidth < 650) {
-        html_code = `<div class="player">
-        <div class="details">
-            <div class="track-art" onclick="on()"></div>
-            <div id="songDetails">
-                <div class="track-name">Track Name</div>
-                <div class="track-artist">Disney</div>
-            </div>
-            <i class="fa fa-heart" class="heart"></i>
-            <!--
-            <div>
-                <img src="./img/music/heart.png" alt="">
-            </div>-->
-        </div>
-
-        <div class="buttons">
-            <div class="prev-track" onclick="prevTrack()"><i class="fa fa-step-backward fa-2x"></i></div>
-            <div class="playpause-track" onclick="playpauseTrack()"><i class="fa fa-play-circle fa-3x"></i></div>
-            <div class="next-track" onclick="nextTrack()"><i class="fa fa-step-forward fa-2x"></i></div>
-        </div>
-        <div class="slider_container slider_middle">
-            <div class="current-time">00:00</div>
-            <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
-            <div class="total-duration">00:00</div>
-        </div>
-        <div class="slider_container slider_right">
-            <i class="fa fa-volume-down"></i>
-            <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
-            <i class="fa fa-volume-up"></i>
-        </div>
-    </div>`
-    }
-    //tablet
-    if (window.innerWidth > 650 && window.innerWidth < 1200) {
-        html_code += `<div class="player">
-        <div class="details">
-            <div class="track-art" onclick="on()"></div>
-            <div id="songDetails">
-                <div class="track-name">Track Name</div>
-                <div class="track-artist">Disney</div>
-            </div>
-            <i class="fa fa-heart" class="heart"></i>
-            <!--
-                <div>
-                    <img src="./img/music/heart.png" alt="">
-                </div>-->
-        </div>
-        <div id="slider_and_buttons">
-            <div class="buttons">
-                <div class="prev-track" onclick="prevTrack()"><i class="fa fa-step-backward fa-2x"></i></div>
-                <div class="playpause-track" onclick="playpauseTrack()"><i class="fa fa-play-circle fa-5x"></i>
-                </div>
-                <div class="next-track" onclick="nextTrack()"><i class="fa fa-step-forward fa-2x"></i></div>
-            </div>
-            <div class="slider_container slider_middle">
-                <div class="current-time">00:00</div>
-                <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
-                <div class="total-duration">00:00</div>
-            </div>
-        </div>
-
-        <div class="slider_container slider_right">
-            <i class="fa fa-volume-down"></i>
-            <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
-            <i class="fa fa-volume-up"></i>
-        </div>
-
-    </div>`;
-    }
-
-    //laptop
-    if (window.innerWidth > 1200) {
-        html_code += `<div class="player">
-        <div class="details">
-            <div class="track-art" onclick="on()"></div>
-            <div id="songDetails">
-                <div class="track-name">Track Name</div>
-                <div class="track-artist">Disney</div>
-            </div>
-            <i class="fa fa-heart" class="heart"></i>
-            <!--
-                <div>
-                    <img src="./img/music/heart.png" alt="">
-                </div>-->
-        </div>
-        <div id="slider_and_buttons">
-            <div class="buttons">
-                <div class="prev-track" onclick="prevTrack()"><i class="fa fa-step-backward fa-2x"></i></div>
-                <div class="playpause-track" onclick="playpauseTrack()"><i class="fa fa-play-circle fa-5x"></i>
-                </div>
-                <div class="next-track" onclick="nextTrack()"><i class="fa fa-step-forward fa-2x"></i></div>
-            </div>
-            <div class="slider_container slider_middle">
-                <div class="current-time">00:00</div>
-                <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
-                <div class="total-duration">00:00</div>
-            </div>
-        </div>
-
-        <div class="slider_container slider_right">
-            <i class="fa fa-volume-down"></i>
-            <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
-            <i class="fa fa-volume-up"></i>
-        </div>
-
-    </div>`;
-    }
-    document.getElementById('ergbox').innerHTML = html_code;
-
-}
-**/
-//resizeFunction()

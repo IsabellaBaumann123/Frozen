@@ -136,13 +136,14 @@ function randomOutput(randomN) {
     let html_code = '';
     if (actMusicQuiz) {
         html_code += `
-                    
-                        <h2>Question ${actQuestion + 1}:</h2>
+                    <div id="audioWrap">
+                        <h2>Song ${actQuestion + 1}:</h2>
                         <audio controls>
                                                 <source src="./music/short_clips/${actQuiz[actQuestion].question}" type="audio/mpeg">
                                             Your browser does not support the audio element.
-                                        </audio>
-                                        <div id="quizAlignWrap"><div id="id1">`
+                                        </audio></div>
+                                        <div id="quizAlignWrap"><div id="id1">
+                    `
     } else {
         html_code += `
                     
@@ -241,6 +242,16 @@ function randomOutput(randomN) {
                             ${actQuiz[actQuestion].rightAnswer}
                         </label>`
     }
+    
+    if(actQuiz == questionsMusic){
+        html_code += `</div>
+                    <div id="id3"><img src="./img/Quiz/${actQuiz[actQuestion].src}" alt=""></div>
+                </div>`
+    } else {
+        html_code += `</div>
+                    <div id="id2"><img src="./img/Quiz/${actQuiz[actQuestion].src}" alt=""></div>
+                </div>`
+    }
     html_code += `
                         <div id="buttonAlign">
                             <button class="button_next" onclick="proofeResult()"> Next
@@ -254,15 +265,5 @@ function randomOutput(randomN) {
                                 </div>
                             </button>
                         </div>`
-    if(actQuiz == questionsMusic){
-        html_code += `</div>
-                    <div id="id3"><img src="./img/Quiz/${actQuiz[actQuestion].src}" alt=""></div>
-                </div>`
-    } else {
-        html_code += `</div>
-                    <div id="id2"><img src="./img/Quiz/${actQuiz[actQuestion].src}" alt=""></div>
-                </div>`
-    }
-    
     ergbox.innerHTML = html_code;
 }

@@ -146,10 +146,9 @@
 #questionBox audio {
     font-family: Arial, Helvetica, sans-serif;
     justify-content: left;
-    margin: 5%;
+    margin: 4%;
     margin-bottom: 0;
     position: relative;
-    margin-top: 0;
 }
 
 #desc {

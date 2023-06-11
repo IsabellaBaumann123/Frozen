@@ -480,7 +480,9 @@
         -webkit-text-stroke-color: var(--black);
     }
 }
-
+#audioWrap{
+    display: flex;
+}
 @media (min-width:1200px) {
     #gridQuestions {
         height: 30vh;
@@ -521,8 +523,8 @@
         margin-top: 2%;
         margin-left: 10%;
         position: absolute;
-        bottom: 15%;
-        right: 15%;
+        bottom: 22%;
+        left: 5%;
     }
 
     #balken {

@@ -352,10 +352,17 @@ main {
     margin-top: 2%;
     margin-left: 10%;
     position: absolute;
-    bottom: 15%;
-    right: 15%;
+    bottom: 20%;
+    left: 5%;
 }
-
+#buttonAlignW {
+    position: relative;
+    display: flex;
+    justify-content: left;
+    margin-top: 2%;
+    margin-left: 10%;
+    justify-content: center;
+}
 #buttonAlignStart {
     position: relative;
     display: flex;

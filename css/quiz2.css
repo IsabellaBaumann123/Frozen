@@ -76,7 +76,7 @@
 }
 
 #img_Box {
-    max-width: 25vw;
+    max-width: 22vw;
     margin: 1%;
     display: block;
     margin-left: auto;
@@ -236,7 +236,6 @@
 }
 
 #headerAuswertung {
-    margin-top: 15%;
     color: var(--main-color-dark);
     text-align: center;
     font-size: 3rem;
@@ -388,8 +387,12 @@
     }
 
     #buttonAlign {
-        top: 20%;
-        justify-content: center;
+        justify-content: left;
+        margin-top: 2%;
+        margin-left: 10%;
+        position: absolute;
+        bottom: 22%;
+        left: 5%;
     }
 
     #balken {
@@ -490,9 +493,7 @@
     }
 
     #wholeSlider {
-        width: 60%;
-        margin-top: 11%;
-        margin-bottom: 13%;
+        width: 100%;
         display: grid;
         grid-template-columns: 85% 15%;
     }
@@ -515,7 +516,7 @@
     }
 
     #img_Box {
-        width: 40%;
+        width: 35%;
     }
 
     #buttonAlign {
@@ -523,7 +524,7 @@
         margin-top: 2%;
         margin-left: 10%;
         position: absolute;
-        bottom: 22%;
+        bottom: 18%;
         left: 5%;
     }
 

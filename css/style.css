@@ -425,6 +425,9 @@ input[type='checkbox']:checked+.slider:before {
     .topnav a.icon {
         float: right;
         display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
     }
     #linksNav a {
         text-align: center;
@@ -453,7 +456,4 @@ input[type='checkbox']:checked+.slider:before {
     #linksNav a {
         text-align: center;
     }
-}
-#linksNav{
-    margin-right: 3%;
 }

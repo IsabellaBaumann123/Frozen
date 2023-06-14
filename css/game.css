@@ -246,3 +246,12 @@
     height: 15vw;
   }
 }
+
+#memo div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#memo{
+  margin-left: 10%;
+}

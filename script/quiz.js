@@ -126,7 +126,12 @@ function printResult() {
                 
                     <h2>Result:</h2>
 
-                <p>${totalPoints}/${actQuiz.length}</p>
+                <p id="result">${totalPoints}/${actQuiz.length}</p>
+                <div id="b">
+    <button onclick="window.location.reload()">
+        Retry
+    </button>
+</div>
                 `
     ergbox.innerHTML = hmtl_code;
 }
@@ -242,8 +247,8 @@ function randomOutput(randomN) {
                             ${actQuiz[actQuestion].rightAnswer}
                         </label>`
     }
-    
-    if(actQuiz == questionsMusic){
+
+    if (actQuiz == questionsMusic) {
         html_code += `</div>
                     <div id="id3"><img src="./img/Quiz/${actQuiz[actQuestion].src}" alt=""></div>
                 </div>`

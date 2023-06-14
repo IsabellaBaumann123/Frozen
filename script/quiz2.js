@@ -72,7 +72,7 @@ function startQuiz(){
   on()
   questionBox.innerHTML=`
                         <h2>Who am I?</h2>
-                        <p id="desc">The "Anna or Elsa" Frozen quiz is a personality quiz designed to determine whether your personality traits align more with Anna or Elsa. In this quiz, you will be presented with a series of statements that describe various personality traits or preferences. You will need to rate each statement on a scale from 1 to 10, with 1 indicating that the statement is not true for you and 10 indicating that the statement is very true for you. Based on your responses, the quiz will calculate a score that reflects whether you are more like Anna or Elsa. This quiz is a fun way to explore your own personality and see how you match up with the two beloved Frozen characters!</p>
+                        <p id="desc">The "Anna or Elsa" Frozen quiz is a personality quiz designed to determine whether your personality traits align more with Anna or Elsa. In this quiz, you will be presented with a series of statements that describe various personality traits or preferences. You will need to rate each statement on a scale from 1 to 10, 1 indicating that the statement is not true for you and 10 indicating that the statement is very true for you. Based on your responses, the quiz will calculate a score that reflects whether you are more like Anna or Elsa.</p>
                         <div id="buttonAlignStart">
                             <button class="button_next" onclick="printQuestion()"> Start
                                 <div class="icon">
@@ -94,7 +94,7 @@ function printQuestion() {
     lastResult()
     console.log("Prozent elsa" + percentElsa)
     console.log("Prozent anna" + percentAnna)
-    if (percentAnna > percentElsa) {
+ /*   if (percentAnna > percentElsa) {
       console.log('nööööööö')
       questionBox.style.backgroundImage = 'url(./img/home_elsaanna.jpg)'
     } else if (percentElsa > percentAnna) {
@@ -102,7 +102,7 @@ function printQuestion() {
     } else {
       questionBox.style.backgroundImage = 'url(./img/home_elsaanna.jpg)'
     }
-
+*/
     /** chart
     const data = {
       labels: [
@@ -124,7 +124,7 @@ function printQuestion() {
       data: data,
     };
  */
-    questionBox.innerHTML = `<p id="headerAuswertung">Auswertung</p>
+    questionBox.innerHTML = `<p id="headerAuswertung">Results:</p>
         <div id="balken">
             <p>Elsa: </p>
             <div><span style="width: ${Math.round(percentElsa)}%; background: #5e9dbf;">${Math.round(percentElsa)}%</span></div>
@@ -150,7 +150,7 @@ function printQuestion() {
     </div>
     </div>`
 
-    html_code += `<div id="buttonAlign"><button class="button_next" onclick="calculateBranche(${actQuestion2 - 1})"> Nächste Frage
+    html_code += `<div id="buttonAlignW"><button class="button_next" onclick="calculateBranche(${actQuestion2 - 1})"> Next
         <div class="icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"></path></svg>
         </div>

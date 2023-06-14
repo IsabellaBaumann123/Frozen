@@ -69,7 +69,7 @@
     --strokeWidth: 0.1rem;
     --strokeColor: rgb(99, 0, 35);
     --imgSlider: url('../img/leaf.png');
-    --topNavImg: url('../img/home/bg2.jpg');
+    --topNavImg: url('../img/home/bg5.jpg');
 }
 
 /**
@@ -456,4 +456,7 @@ input[type='checkbox']:checked+.slider:before {
     #linksNav a {
         text-align: center;
     }
+}
+#linksNav{
+    margin-right: 5%;
 }

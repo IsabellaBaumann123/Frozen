@@ -68,11 +68,7 @@
     --imgSlider: url('../img/leaf.png');
 }
 
-#linksNav a {
-    transition: all 0.5s ease-in;
-    -webkit-text-stroke-width: var(--strokeWidth);
-    -webkit-text-stroke-color: var(--strokeColor);
-}
+
 /**
 #linksNav a:hover {
     border-radius: 2vw;

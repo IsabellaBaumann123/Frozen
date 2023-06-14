@@ -653,3 +653,6 @@ html {
 .swiper-pagination-bullet{
     background-color: var(--blue) !important;
 }
+.topnav, #myTopnav{
+    margin-right: 0;
+}

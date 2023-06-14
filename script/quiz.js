@@ -51,8 +51,7 @@ let description = ""
 
 
 function movieQuiz(quiz) {
-    let ergbox = document.getElementById('questionBox')
-    on()
+    let ergbox = document.getElementById('erg')
     if (quiz === 'questionsTF') {
         actQuiz = questionsTF;
         outpActQuiz = "Movie Quiz"
@@ -68,7 +67,7 @@ function movieQuiz(quiz) {
         description = "The Find the Missing Character Frozen quiz is a fun visual puzzle that challenges you to identify which character is missing from a given scene. To play this quiz, you should first study all of the characters on the character page to become familiar with their appearances. Then, you will be presented with a picture from the movie that is missing one of the characters. You will need to examine the picture closely and choose the correct character from a list of options provided. This quiz is a great way to test your observation skills and see how well you know the characters of Frozen!"
     }
     //description = "The "Anna or Elsa" Frozen quiz is a personality quiz designed to determine whether your personality traits align more with Anna or Elsa. In this quiz, you will be presented with a series of statements that describe various personality traits or preferences. You will need to rate each statement on a scale from 1 to 10, with 1 indicating that the statement is not true for you and 10 indicating that the statement is very true for you. Based on your responses, the quiz will calculate a score that reflects whether you are more like Anna or Elsa. This quiz is a fun way to explore your own personality and see how you match up with the two beloved Frozen characters"
-    ergbox.innerHTML = `
+    ergbox.innerHTML = `<div id="questionBox">
                         <h2>${outpActQuiz}</h2>
                         <p id="desc">${description}</p>
                         <div id="buttonAlignStart">
@@ -82,7 +81,7 @@ function movieQuiz(quiz) {
                                     </svg>
                                 </div>
                             </button>
-                        </div>
+                        </div></div>
                     `
 }
 
@@ -120,10 +119,10 @@ function proofeResult() {
 }
 
 function printResult() {
-    let ergbox = document.getElementById('questionBox')
+    let ergbox = document.getElementById('erg')
     let hmtl_code = '';
     hmtl_code += `
-                
+    <div id="questionBox">
                     <h2>Result:</h2>
 
                 <p id="result">${totalPoints}/${actQuiz.length}</p>
@@ -131,16 +130,16 @@ function printResult() {
     <button onclick="window.location.reload()">
         Retry
     </button>
-</div>
+</div></div>
                 `
     ergbox.innerHTML = hmtl_code;
 }
 
 function randomOutput(randomN) {
-    let ergbox = document.getElementById('questionBox')
+    let ergbox = document.getElementById('erg')
     let html_code = '';
     if (actMusicQuiz) {
-        html_code += `
+        html_code += `<div id="questionBox">
                     <div id="audioWrap">
                         <h2>Song ${actQuestion + 1}:</h2>
                         <audio controls>
@@ -151,7 +150,7 @@ function randomOutput(randomN) {
                     `
     } else {
         html_code += `
-                    
+        <div id="questionBox">
                         <h2>Question ${actQuestion + 1}:</h2>
                         <p id="question">${actQuiz[actQuestion].question}</p>
                         <div id="quizAlignWrap"><div id="id1">`
@@ -269,6 +268,6 @@ function randomOutput(randomN) {
                                     </svg>
                                 </div>
                             </button>
-                        </div>`
+                        </div></div>`
     ergbox.innerHTML = html_code;
 }

@@ -25,7 +25,7 @@ let percentElsa;
 let percentAnna;
 let possiblePointsElsa = 0
 let possiblePointsAnna = 0
-let questionBox = document.getElementById('questionBox');
+let questionBox = document.getElementById('erg');
 
 function calculateBranche(actQuestion) {
 
@@ -69,8 +69,8 @@ function lastResult() {
   percentAnna = (actPointsAnna * 100) / (actPointsAnna + actPointsElsa);
 }
 function startQuiz(){
-  on()
-  questionBox.innerHTML=`
+ // on()
+  questionBox.innerHTML=`<div id="questionBox">
                         <h2>Who am I?</h2>
                         <p id="desc">The "Anna or Elsa" Frozen quiz is a personality quiz designed to determine whether your personality traits align more with Anna or Elsa. In this quiz, you will be presented with a series of statements that describe various personality traits or preferences. You will need to rate each statement on a scale from 1 to 10, 1 indicating that the statement is not true for you and 10 indicating that the statement is very true for you. Based on your responses, the quiz will calculate a score that reflects whether you are more like Anna or Elsa.</p>
                         <div id="buttonAlignStart">
@@ -84,6 +84,7 @@ function startQuiz(){
                                     </svg>
                                 </div>
                             </button>
+                        </div>
                         </div>
                     `
 }
@@ -124,13 +125,13 @@ function printQuestion() {
       data: data,
     };
  */
-    questionBox.innerHTML = `<p id="headerAuswertung">Results:</p>
+    questionBox.innerHTML = `<div id="questionBox"><p id="headerAuswertung">Results:</p>
         <div id="balken">
             <p>Elsa: </p>
             <div><span style="width: ${Math.round(percentElsa)}%; background: #5e9dbf;">${Math.round(percentElsa)}%</span></div>
             <p>Anna: </p>
             <div><span style="width: ${Math.round(percentAnna)}%; background: #0066cc;">${Math.round(percentAnna)}%</span></div>
-        </div>
+        </div></div>
     `
   } else {
     let html_code = ''
@@ -139,7 +140,7 @@ function printQuestion() {
     questionBox.style.animation = "scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both"
     //print question
     console.log(actQuestion2)
-    html_code = `<div id="gridQuestions"><p id="questions1">${questions[actQuestion2].question}</p><img id="img_Box" src="./img/Quiz/quiz3/${questions[actQuestion2].imgSrc}" alt=""></div>`
+    html_code = `<div id="questionBox"><div id="gridQuestions"><p id="questions1">${questions[actQuestion2].question}</p><img id="img_Box" src="./img/Quiz/quiz3/${questions[actQuestion2].imgSrc}" alt=""></div>`
     actQuestion2++;
     html_code += `
   <div id= wholeSlider>
@@ -154,7 +155,7 @@ function printQuestion() {
         <div class="icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"></path></svg>
         </div>
-      </button>`
+      </button></div>`
 
     questionBox.innerHTML = html_code;
 

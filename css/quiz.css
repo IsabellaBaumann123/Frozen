@@ -190,11 +190,11 @@ main {
     }
 
     #chooseQuiz {
-        width: 90%;
         margin-left: auto;
         margin-right: auto;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 2vw;
         align-items: center;
         align-content: center;
     }
@@ -204,7 +204,6 @@ main {
         height: 20vw;
         margin-left: auto;
         margin-right: auto;
-        margin: 10%;
         opacity: 0.6;
         transition: all 0.2s linear;
     }
@@ -224,6 +223,7 @@ main {
         margin-right: auto;
         display: grid;
         grid-template-columns: 1fr 1fr;
+        gap: 2vw;
         align-items: center;
         align-content: center;
     }
@@ -256,6 +256,10 @@ main {
         align-content: center;
     }
 
+    #erg {
+        margin-top: 10%;
+        height: fit-content;
+    }
 
     #chooseQuiz div {
         width: 70vw;
@@ -666,6 +670,7 @@ main {
         font-size: 3vw;
     }
 }
+
 /*******************************  *************************************************/
 /**laptop***/
 @media (min-width:1200px) {}

@@ -428,3 +428,6 @@ i.fa-step-backward {
         margin-right: 5%;
     }
 }
+.fa:hover{
+    cursor: pointer;
+}

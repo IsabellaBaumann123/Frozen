@@ -146,11 +146,15 @@
 #questionBox audio {
     font-family: Arial, Helvetica, sans-serif;
     justify-content: left;
-    margin: 4%;
+    margin: 7%;
+    
     margin-bottom: 0;
     position: relative;
+    width: 25vw;
 }
-
+#questionBox audio{
+    margin-left: 0;
+}
 
 
 /******************************* choose quiz *************************************************/
@@ -505,7 +509,7 @@ main {
 }
 
 #id2 {
-    width: 80%;
+    width: 65%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -515,6 +519,10 @@ main {
 #id3 {
     width: 15vw;
     height: 15vw;
+    margin: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #result {

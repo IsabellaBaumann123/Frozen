@@ -267,6 +267,7 @@
     width: 100%;
     margin: 1%;
     padding: 3%;
+    box-shadow: 1px 1px 3px var(--black);
     -moz-box-shadow: 1px 1px 3px var(--black);
 }
 

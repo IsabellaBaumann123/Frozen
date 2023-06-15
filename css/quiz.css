@@ -147,12 +147,13 @@
     font-family: Arial, Helvetica, sans-serif;
     justify-content: left;
     margin: 7%;
-    
+
     margin-bottom: 0;
     position: relative;
     width: 25vw;
 }
-#questionBox audio{
+
+#questionBox audio {
     margin-left: 0;
 }
 
@@ -606,6 +607,7 @@ main {
 @media (min-width:0px)and (max-width:650px) {
     /***********button*****************/
 
+ 
 
     button {
         z-index: 10;
@@ -676,6 +678,9 @@ main {
         position: relative;
         margin-top: 0;
         font-size: 3vw;
+    }
+    .songQu {
+        display: none;
     }
 }
 

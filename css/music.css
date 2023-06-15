@@ -431,3 +431,6 @@ i.fa-step-backward {
 .fa:hover{
     cursor: pointer;
 }
+#choosePlaylist img:hover{
+    cursor: pointer;
+}

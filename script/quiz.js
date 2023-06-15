@@ -124,7 +124,7 @@ function printResult() {
     hmtl_code += `
     <div id="questionBox">
     <div id="balken">
-        <h2>Results</h2>
+        <h2 id="now">Results</h2>
         <canvas id="myChart2" style="width:100%;max-height:80%"></canvas>
     </div>
                  

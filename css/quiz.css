@@ -739,7 +739,7 @@ main {
         margin-top: 5%;
         margin-left: 10%;
         position: absolute;
-        bottom: 20%;
+        bottom: 10%;
         left: 5%;
     }
 
@@ -747,7 +747,7 @@ main {
         position: absolute;
         display: flex;
         justify-content: left;
-        bottom: 20%;
+        bottom: 12%;
         left: 45%;
         justify-content: center;
     }

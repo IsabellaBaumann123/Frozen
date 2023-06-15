@@ -363,13 +363,7 @@
         margin: 2vw;
     }
 
-    #wholeSlider {
-        width: 100%;
-        margin-top: 20%;
-        margin-bottom: 10%;
-        display: grid;
-        grid-template-columns: 85% 15%;
-    }
+
 
     #slider_pinguin[type="range"]::-webkit-slider-thumb {
         transform: scale(1.3);
@@ -397,7 +391,7 @@
         margin-top: 2%;
         margin-left: 10%;
         position: absolute;
-        bottom: 22%;
+        bottom: 28%;
         left: 5%;
     }
 

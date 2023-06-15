@@ -116,7 +116,8 @@
 }
 
 #erg {
-    height: 94vh;
+
+    height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -142,7 +143,7 @@
     margin-bottom: 2%;
 }
 
-#questionBox #question,
+
 #questionBox audio {
     font-family: Arial, Helvetica, sans-serif;
     justify-content: left;
@@ -151,6 +152,20 @@
     margin-bottom: 0;
     position: relative;
     width: 25vw;
+}
+
+#questionBox #question {
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: left;
+    margin: 7%;
+
+    margin-bottom: 1%;
+    position: relative;
+    width: 85vw;
+}
+
+#questionBox audio {
+    margin-left: 0;
 }
 
 #questionBox audio {
@@ -222,7 +237,7 @@ main {
 
 /***tablet**/
 @media (min-width:650px)and (max-width:1200px) {
-    
+
     #chooseQuiz {
         width: 95%;
         margin-left: auto;
@@ -351,21 +366,14 @@ main {
     position: relative;
     display: flex;
     justify-content: left;
-    margin-top: 2%;
+    margin-top: 50%;
     margin-left: 10%;
     position: absolute;
-    bottom: 18%;
+    bottom: 2%;
     left: 5%;
 }
 
-#buttonAlignW {
-    position: relative;
-    display: flex;
-    justify-content: left;
-    margin-top: -2%;
-    margin-left: 10%;
-    justify-content: center;
-}
+
 
 #buttonAlignStart {
     position: relative;
@@ -472,8 +480,8 @@ main {
     .radio {
         position: relative;
         display: inline-block;
-        width: 4.5vw;
-        height: 4.5vw;
+        width: 1.5vw;
+        height: 1.5vw;
         border-radius: 50%;
         border: 1vw solid var(--white);
         box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
@@ -506,7 +514,7 @@ main {
 }
 
 #id1 {
-    width: 70%;
+    width: 75%;
     margin-left: 3%;
 }
 
@@ -608,7 +616,7 @@ main {
 @media (min-width:0px)and (max-width:650px) {
     /***********button*****************/
 
- 
+
 
     button {
         z-index: 10;
@@ -639,6 +647,17 @@ main {
         justify-content: center;
         margin: 0;
     }
+
+    #quizAlignWrap {
+        position: relative;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #questionBox #question {
+        width: 60vw;
+    }
 }
 
 /*******************************  *************************************************/
@@ -665,8 +684,9 @@ main {
         margin-bottom: 0;
         position: relative;
         margin-top: 0;
-        font-size: 2.5vw;
+        font-size: 2vw;
     }
+
 }
 
 /**handy**/
@@ -680,20 +700,67 @@ main {
         margin-top: 0;
         font-size: 3vw;
     }
+
+}
+
+@media (min-width:0px)and (max-width:850px) {
     .songQu {
         display: none;
     }
 }
+
 /*******************************  *************************************************/
 /**laptop***/
-@media (min-width:1200px) {}
+@media (min-width:1200px) {
+    #buttonAlignW {
+        position: absolute;
+        display: flex;
+        justify-content: left;
+        bottom: 17%;
+        left: 45%;
+        justify-content: center;
+    }
+}
 
 /***tablet**/
 @media (min-width:650px)and (max-width:1200px) {
-    #questionBox h2{
+    #now {
         display: none;
+    }
+
+    #questionBox #question {
+        margin: 2%;
+    }
+
+    #buttonAlign {
+        position: relative;
+        display: flex;
+        justify-content: left;
+        margin-top: 5%;
+        margin-left: 10%;
+        position: absolute;
+        bottom: 20%;
+        left: 5%;
+    }
+
+    #buttonAlignW {
+        position: absolute;
+        display: flex;
+        justify-content: left;
+        bottom: 20%;
+        left: 45%;
+        justify-content: center;
+    }
+
+    #erg {
+        margin-top: 8%;
     }
 }
 
 /**handy**/
-@media (min-width:0px)and (max-width:650px) {}
+@media (min-width:0px)and (max-width:650px) {
+    #questionBox #question {
+        margin: 2%;
+    }
+
+}

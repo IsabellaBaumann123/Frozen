@@ -101,7 +101,7 @@ function printQuestion() {
 
     questionBox.innerHTML = `<div id="questionBox">
     <div id="balken">
-    <h2>Results</h2>
+    <h2 id="now"songQu>Results</h2>
     <canvas id="myChart" style="width:100%;max-height:80%"></canvas>
 </div>
 

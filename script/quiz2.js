@@ -1,3 +1,5 @@
+
+
 let actValue
 let input
 //Questions
@@ -68,9 +70,9 @@ function lastResult() {
   percentElsa = (actPointsElsa * 100) / (actPointsAnna + actPointsElsa);
   percentAnna = (actPointsAnna * 100) / (actPointsAnna + actPointsElsa);
 }
-function startQuiz(){
- // on()
-  questionBox.innerHTML=`<div id="questionBox">
+function startQuiz() {
+  // on()
+  questionBox.innerHTML = `<div id="questionBox">
                         <h2>Who am I?</h2>
                         <p id="desc">The "Anna or Elsa" Frozen quiz is a personality quiz designed to determine whether your personality traits align more with Anna or Elsa. In this quiz, you will be presented with a series of statements that describe various personality traits or preferences. You will need to rate each statement on a scale from 1 to 10, 1 indicating that the statement is not true for you and 10 indicating that the statement is very true for you. Based on your responses, the quiz will calculate a score that reflects whether you are more like Anna or Elsa.</p>
                         <div id="buttonAlignStart">
@@ -87,52 +89,46 @@ function startQuiz(){
                         </div>
                         </div>
                     `
+                    
 }
 function printQuestion() {
-  
-  
+
+
   if (actQuestion2 >= maxQuestions) {
     lastResult()
     console.log("Prozent elsa" + percentElsa)
     console.log("Prozent anna" + percentAnna)
- /*   if (percentAnna > percentElsa) {
-      console.log('nööööööö')
-      questionBox.style.backgroundImage = 'url(./img/home_elsaanna.jpg)'
-    } else if (percentElsa > percentAnna) {
-      questionBox.style.backgroundImage = 'url(./img/home_elsaanna.jpg)'
-    } else {
-      questionBox.style.backgroundImage = 'url(./img/home_elsaanna.jpg)'
-    }
-*/
-    /** chart
-    const data = {
-      labels: [
-        'Anna',
-        'Elsa',
-      ],
-      datasets: [{
-        label: 'Anna or Elsa?',
-        data: [300, 50],
-        backgroundColor: [
-          'rgb(255, 99, 132)',
-          'rgb(54, 162, 235)'
-        ],
-        hoverOffset: 4
-      }]
-    };
-    const config = {
-      type: 'pie',
-      data: data,
-    };
- */
-    questionBox.innerHTML = `<div id="questionBox"><p id="headerAuswertung">Results:</p>
-        <div id="balken">
-            <p>Elsa: </p>
-            <div><span style="width: ${Math.round(percentElsa)}%; background: #5e9dbf;">${Math.round(percentElsa)}%</span></div>
-            <p>Anna: </p>
-            <div><span style="width: ${Math.round(percentAnna)}%; background: #0066cc;">${Math.round(percentAnna)}%</span></div>
-        </div></div>
+
+    questionBox.innerHTML = `<div id="questionBox">
+    <div id="balken">
+    <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+</div>
+
     `
+    var xValues = ["Anna", "Elsa"];
+    var yValues = [(Math.round(percentAnna)),(Math.round(percentElsa))];
+    var barColors = [
+      "#8f3985",
+      "#2968bb"
+    ];
+    
+    new Chart("myChart", {
+      type: "pie",
+      data: {
+        labels: xValues,
+        datasets: [{
+          backgroundColor: barColors,
+          data: yValues
+        }]
+      },
+      options: {
+        title: {
+          display: true,
+          text: "Results"
+        }
+      }
+    });
+
   } else {
     let html_code = ''
     questionBox.style.backgroundImage = "none"
@@ -161,7 +157,7 @@ function printQuestion() {
 
     getValue()
 
-    
+
   }
 }
 function getTempValue() {
@@ -208,3 +204,5 @@ function getValue() {
     input.value = Math.round(value * 100);
   });
 }
+
+

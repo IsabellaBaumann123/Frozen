@@ -683,7 +683,10 @@ main {
         display: none;
     }
 }
-
+.myChartDiv {
+    max-width: 1200px;
+    max-height: 800px;
+  }
 /*******************************  *************************************************/
 /**laptop***/
 @media (min-width:1200px) {}

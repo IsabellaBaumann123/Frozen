@@ -123,16 +123,40 @@ function printResult() {
     let hmtl_code = '';
     hmtl_code += `
     <div id="questionBox">
-                    <h2>Result:</h2>
+    <div id="balken">
+        <h2>Results</h2>
+        <canvas id="myChart2" style="width:100%;max-height:80%"></canvas>
+    </div>
+                 
 
-                <p id="result">${totalPoints}/${actQuiz.length}</p>
-                <div id="b">
+      </div>
+                `
+   /**button
+    *           <div id="b">
     <button onclick="window.location.reload()">
         Retry
     </button>
-</div></div>
-                `
+</div>
+    */
     ergbox.innerHTML = hmtl_code;
+
+    var xValues2 = ["correct", "incorrect"];
+    var yValues2 = [(totalPoints), (actQuiz.length - totalPoints)];
+    var barColors2 = [
+        "green",
+        "red"
+    ];
+
+    new Chart("myChart2", {
+        type: "pie",
+        data: {
+            labels: xValues2,
+            datasets: [{
+                backgroundColor: barColors2,
+                data: yValues2
+            }]
+        }
+    });
 }
 
 function randomOutput(randomN) {

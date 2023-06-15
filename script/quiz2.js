@@ -101,7 +101,8 @@ function printQuestion() {
 
     questionBox.innerHTML = `<div id="questionBox">
     <div id="balken">
-    <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+    <h2>Results</h2>
+    <canvas id="myChart" style="width:100%;max-height:80%"></canvas>
 </div>
 
     `
@@ -120,12 +121,6 @@ function printQuestion() {
           backgroundColor: barColors,
           data: yValues
         }]
-      },
-      options: {
-        title: {
-          display: true,
-          text: "Results"
-        }
       }
     });
 

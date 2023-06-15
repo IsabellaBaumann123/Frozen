@@ -222,6 +222,7 @@ main {
 
 /***tablet**/
 @media (min-width:650px)and (max-width:1200px) {
+    
     #chooseQuiz {
         width: 95%;
         margin-left: auto;
@@ -683,16 +684,16 @@ main {
         display: none;
     }
 }
-.myChartDiv {
-    max-width: 1200px;
-    max-height: 800px;
-  }
 /*******************************  *************************************************/
 /**laptop***/
 @media (min-width:1200px) {}
 
 /***tablet**/
-@media (min-width:650px)and (max-width:1200px) {}
+@media (min-width:650px)and (max-width:1200px) {
+    #questionBox h2{
+        display: none;
+    }
+}
 
 /**handy**/
 @media (min-width:0px)and (max-width:650px) {}

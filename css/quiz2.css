@@ -187,6 +187,9 @@
     #numberSlider {
         text-align: center;
     }
+    #balken{
+        flex-direction: column;
+    }
 }
 
 
@@ -243,11 +246,13 @@
 
 /**balken**/
 #balken {
+    height: 100%;
     width: 45%;
     margin-left: auto;
     margin-right: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #balken p {
@@ -462,9 +467,7 @@
 
     #balken {
         width: 90%;
-        margin-left: auto;
-        margin-right: auto;
-        grid-template-columns: 60% 40%;
+        
     }
 
     #balken p {
